@@ -1,100 +1,67 @@
-# 🎭 MaskIt
+# Privacy Shield - Desktop Screen Privacy Utility
 
-**MaskIt** is a lightweight desktop overlay tool that helps you hide distracting or sensitive parts of your screen. Create customizable **rectangle** or **circle** masks, adjust their **color** and **opacity**, and place them anywhere on your display.
+Privacy Shield is a lightweight, modern, and user-friendly desktop application built with Python and PyQt6. It allows you to protect your privacy by placing overlay masks (rectangles or circles) over sensitive portions of your screen. 
 
-Whether you're studying online, working with private information, giving a presentation, or simply trying to stay focused, MaskIt gives you a simple way to cover unwanted content.
-
-## ✨ Features
-
-* 🔲 Create **Rectangle** or ⚪ **Circle** overlays.
-* 🎨 Choose between **Black** or **White** mask colors.
-* 🌗 Adjust overlay **opacity** for the perfect balance between visibility and concealment.
-* 🖱️ Move and position masks anywhere on the screen.
-* 🖥️ Lightweight desktop application with a simple control panel.
-* 📱 Optional mobile web interface for remote control.
-
-## 🚀 Use Cases
-
-* 📚 Hide distracting advertisements or pop-ups while learning online.
-* 🔒 Cover sensitive information during meetings, recordings, or screen sharing.
-* 🎥 Mask private areas of the screen while creating tutorials or demos.
-* 🎯 Create a distraction-free workspace by hiding unnecessary UI elements.
-* 💡 Use overlays as temporary visual guides during presentations or workflows.
-
-## 📂 Project Structure
-
-```text
-MaskIt/
-├── screen_privacy_app/
-│   ├── main.py
-│   ├── ui/
-│   │   ├── control_panel.py
-│   │   └── privacy_mask.py
-│   ├── utils/
-│   │   ├── api_server.py
-│   │   └── styles.py
-│   ├── web/
-│   │   ├── index.html
-│   │   ├── app.js
-│   │   └── style.css
-│   └── requirements.txt
-├── .gitignore
-├── README.md
-└── run_privacy_app.bat
-```
-
-## 🛠️ Installation
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/your-username/MaskIt.git
-cd MaskIt
-```
-
-### 2. Install dependencies
-
-```bash
-pip install -r screen_privacy_app/requirements.txt
-```
-
-### 3. Run the application
-
-```bash
-python screen_privacy_app/main.py
-```
-
-Or simply run:
-
-```text
-run_privacy_app.bat
-```
-
-## 🧰 Technologies Used
-
-* Python
-* FastAPI
-* HTML, CSS, JavaScript
-* Desktop GUI Framework (PyQt / CustomTkinter / Tkinter)
-* Responsive Web Interface for Remote Control
-
-## 🔮 Future Improvements
-
-* Drag-and-resize overlays directly on the screen.
-* Multiple overlay profiles.
-* Keyboard shortcuts for quick toggling.
-* AI-powered distraction detection.
-* Webcam-based anti-peek privacy mode.
-* Additional shapes and custom colors.
-
-## 🤝 Contributing
-
-Contributions, feature requests, and suggestions are welcome! Feel free to open an issue or submit a pull request.
-
-## 📄 License
-
-This project is licensed under the MIT License. Feel free to use, modify, and distribute it.
+Additionally, it comes with a **built-in mobile remote control web application** so you can manage your screen privacy overlays from your phone.
 
 ---
 
-### ⭐ If you find this project useful, consider giving it a star on GitHub!
+## Features
+
+1. **Multiple Mask Shapes**: Supports both Rectangles and Circles.
+2. **Dynamic Opacity**: Adjust transparency seamlessly from 10% to 100%.
+3. **Move & Resize**: Drag masks anywhere on the screen or resize them using the bottom-right corner handles.
+4. **Color Customization**: Easily toggle masks between **Black** and **White**.
+5. **Border Control**: Toggle active selection outlines and resizing handles on or off so the mask blends seamlessly with your screen.
+6. **Keyboard Shortcuts**: Use the global hotkey `Ctrl + Alt + H` from anywhere on Windows to quickly hide or show all active masks.
+7. **Mobile Remote Control**: Scans your local network and displays a QR code to let you control everything from any smartphone or tablet.
+
+---
+
+## Installation & Setup
+
+### Prerequisites
+- Python 3.8 or higher installed on your system.
+
+### Steps
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+   cd YOUR_REPOSITORY
+   ```
+
+2. **Create and Activate a Virtual Environment**:
+   ```bash
+   python -m venv venv
+   venv\Scripts\activate
+   ```
+
+3. **Install Dependencies**:
+   ```bash
+   pip install -r screen_privacy_app/requirements.txt
+   ```
+
+4. **Run the Application**:
+   - Double-click the `run_privacy_app.bat` file.
+   - Or run directly from your terminal:
+     ```bash
+     python screen_privacy_app/main.py
+     ```
+
+---
+
+## Remote Control Usage
+When the application starts, it hosts a local web server (FastAPI) on port `8000` and displays a QR Code in your terminal.
+1. Connect your phone and PC to the **same Wi-Fi network**.
+2. Scan the QR code with your phone camera or enter the URL shown in the console.
+3. Use the remote control dashboard to toggle opacity, change shapes, add/delete masks, switch colors, or hide active overlays completely!
+
+---
+
+## Technologies Used
+- **PyQt6** for native desktop GUI, overlays, and system window control.
+- **FastAPI & Uvicorn** for the mobile remote API server.
+- **HTML/CSS/JS** for the mobile remote interface.
+- **qrcode** for local CLI QR Code generation.
+- **keyboard** for global Windows hotkeys.
